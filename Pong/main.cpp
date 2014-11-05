@@ -24,6 +24,7 @@ int main(int, char const**)
 {
     // Create the main window
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
+    window.setVerticalSyncEnabled(true);
 
     
     // Set the Icon
@@ -56,6 +57,12 @@ int main(int, char const**)
     sf::RectangleShape bar2(sf::Vector2f(bar_w, bar_h));
     bar2.setFillColor(sf::Color(50, 100, 250));
     bar2.setPosition(800-wall_w-bar_w,300-bar_h/2);
+    
+    double line_w=2;
+    double line_h=600;
+    sf::RectangleShape line(sf::Vector2f(line_w,line_h));
+    line.setFillColor(sf::Color(250, 250, 250));
+    line.setPosition(400,0);
 
     // Create a graphical text to display
     /*sf::Font font;
@@ -117,7 +124,7 @@ int main(int, char const**)
             if(ball.getPosition().y>=bar1.getPosition().y+bar_h-ball_r && ball.getPosition().y<=bar1.getPosition().y+bar_h){
                 if(ball.getPosition().x<=wall_w+bar_w && ball.getPosition().x>=wall_w-2*ball_r){
                     ball_vy*=-1;
-                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
                         ball_vy=8;
                     }
                 }
@@ -125,7 +132,7 @@ int main(int, char const**)
             if(ball.getPosition().y>=bar2.getPosition().y+bar_h-ball_r && ball.getPosition().y<=bar2.getPosition().y+bar_h){
                 if(ball.getPosition().x>=800-wall_w-bar_w-2*ball_r && ball.getPosition().x<=800-wall_w){
                     ball_vy*=-1;
-                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)){
                         ball_vy=8;
                     }
                 }
@@ -138,7 +145,7 @@ int main(int, char const**)
             if(ball.getPosition().y>=bar1.getPosition().y-2*ball_r && ball.getPosition().y<=bar1.getPosition().y-ball_r){
                 if(ball.getPosition().x<=wall_w+bar_w && ball.getPosition().x>=wall_w-2*ball_r){
                     ball_vy*=-1;
-                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
                         ball_vy=-8;
                     }
                 }
@@ -146,7 +153,7 @@ int main(int, char const**)
             if(ball.getPosition().y>=bar2.getPosition().y-2*ball_r && ball.getPosition().y<=bar2.getPosition().y-ball_r){
                 if(ball.getPosition().x>=800-wall_w-bar_w-2*ball_r && ball.getPosition().x<=800-wall_w){
                     ball_vy*=-1;
-                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::K)){
                         ball_vy=-8;
                     }
                 }
@@ -154,14 +161,14 @@ int main(int, char const**)
         }
         
         
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::K))
         {
             if(bar2.getPosition().y>0)
             {
                 bar2.move(0,-speed);
             }
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
         {
             if(bar2.getPosition().y<600-bar_h)
             {
@@ -210,6 +217,9 @@ int main(int, char const**)
         window.draw(ball);
         window.draw(bar1);
         window.draw(bar2);
+        
+        window.draw(line);
+        //Changed somehthing here!
 
         // Draw the string
         // window.draw(text);

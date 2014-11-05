@@ -221,6 +221,9 @@ int main(int, char const**)
         window.draw(ball);
         window.draw(bar1);
         window.draw(bar2);
+        
+        window.draw(line);
+        //Changed somehthing here!
 
         // Draw the string
         // window.draw(text);

@@ -71,23 +71,20 @@ int main(int, char const**)
     }
     sf::Text text1("", font, 50);
     text1.setColor(sf::Color::White);
-    int Score1 = 0;
-    std::string textScore1 = std::to_string(Score1);
+    int Score1=0;
+    std::string textScore1=std::to_string(Score1);
     text1.setString(textScore1);
-    sf::FloatRect boxText1 = text1.getGlobalBounds();
-    text1.setPosition(300, 50);
-    
-    
-    
-    
+    //sf::FloatRect boxText1=text1.getGlobalBounds();
+    text1.setPosition(300,50);
     
     sf::Text text2("", font, 50);
     text2.setColor(sf::Color::White);
-    int Score2 = 0;
-    std::string textScore2 = std::to_string(Score2);
+    int Score2=0;
+    std::string textScore2=std::to_string(Score2);
     text2.setString(textScore2);
-    sf::FloatRect boxText2 = text2.getGlobalBounds();
-    text2.setPosition(450, 50);
+    sf::FloatRect boxText2=text2.getGlobalBounds();
+    text2.setPosition(500-boxText2.width,50);
+    
      
     // Load a music to play
     sf::Music music;

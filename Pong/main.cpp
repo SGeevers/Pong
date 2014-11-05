@@ -41,8 +41,8 @@ int main(int, char const**)
     }
     sf::Sprite sprite(texture);*/
     double ball_r=20;
-    double ball_vx=-8;
-    double ball_vy=8;
+    double ball_vx=-6;
+    double ball_vy=6;
     sf::CircleShape ball(ball_r);
     ball.setFillColor(sf::Color(250, 100, 50));
     ball.setPosition(400-ball_r/2,300-ball_r/2);
@@ -65,13 +65,26 @@ int main(int, char const**)
     line.setPosition(400,0);
 
     // Create a graphical text to display
-    /*sf::Font font;
+    sf::Font font;
     if (!font.loadFromFile(resourcePath() + "sansation.ttf")) {
         return EXIT_FAILURE;
     }
-    sf::Text text("Hello SFML", font, 50);
-    text.setColor(sf::Color::Black);
-    */
+    sf::Text text1("", font, 50);
+    text1.setColor(sf::Color::White);
+    int Score1=0;
+    std::string textScore1=std::to_string(Score1);
+    text1.setString(textScore1);
+    //sf::FloatRect boxText1=text1.getGlobalBounds();
+    text1.setPosition(300,50);
+    
+    sf::Text text2("", font, 50);
+    text2.setColor(sf::Color::White);
+    int Score2=0;
+    std::string textScore2=std::to_string(Score2);
+    text2.setString(textScore2);
+    sf::FloatRect boxText2=text2.getGlobalBounds();
+    text2.setPosition(500-boxText2.width,50);
+    
      
     // Load a music to play
     /*sf::Music music;
@@ -213,16 +226,15 @@ int main(int, char const**)
         // Clear screen
         window.clear();
 
+        // Draw the string
+        window.draw(text1);
+        window.draw(text2);
+        
         // Draw the sprite
+        window.draw(line);
         window.draw(ball);
         window.draw(bar1);
         window.draw(bar2);
-        
-        window.draw(line);
-        //Changed somehthing here!
-
-        // Draw the string
-        // window.draw(text);
 
         // Update the window
         window.display();

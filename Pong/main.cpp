@@ -115,6 +115,17 @@ int main(int, char const**)
                 {
                     ball_vx*=-1;
                 }
+                if(abs(ball_vy)<10)
+                {
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+                    {
+                        ball_vy+=1;
+                    }
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+                    {
+                        ball_vy-=1;
+                    }
+                }
             }
         }
         if(ball_vx>0)
@@ -129,6 +140,17 @@ int main(int, char const**)
                 if(ball.getPosition().y<bar2.getPosition().y+bar_h && ball.getPosition().y>bar2.getPosition().y-2*ball_r)
                 {
                     ball_vx*=-1;
+                }
+                if(abs(ball_vy)<10)
+                {
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
+                    {
+                        ball_vy+=1;
+                    }
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::K))
+                    {
+                        ball_vy-=1;
+                    }
                 }
             }
         }

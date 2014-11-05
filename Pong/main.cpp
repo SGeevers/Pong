@@ -58,31 +58,45 @@ int main(int, char const**)
     bar2.setFillColor(sf::Color(50, 100, 250));
     bar2.setPosition(800-wall_w-bar_w,300-bar_h/2);
     
-    //Partition Line between two players
-    double line_w = 2;
-    double line_h = 600;
-    double line_gap = 10;
-    sf::RectangleShape line(sf::Vector2f(line_w, line_h));
+    double line_w=2;
+    double line_h=600;
+    sf::RectangleShape line(sf::Vector2f(line_w,line_h));
     line.setFillColor(sf::Color(250, 250, 250));
-    
+    line.setPosition(400,0);
 
     // Create a graphical text to display
-    /*sf::Font font;
+    sf::Font font;
     if (!font.loadFromFile(resourcePath() + "sansation.ttf")) {
         return EXIT_FAILURE;
     }
-    sf::Text text("Hello SFML", font, 50);
-    text.setColor(sf::Color::Black);
-    */
+    sf::Text text1("", font, 50);
+    text1.setColor(sf::Color::White);
+    int Score1 = 0;
+    std::string textScore1 = std::to_string(Score1);
+    text1.setString(textScore1);
+    sf::FloatRect boxText1 = text1.getGlobalBounds();
+    text1.setPosition(300, 50);
+    
+    
+    
+    
+    
+    sf::Text text2("", font, 50);
+    text2.setColor(sf::Color::White);
+    int Score2 = 0;
+    std::string textScore2 = std::to_string(Score2);
+    text2.setString(textScore2);
+    sf::FloatRect boxText2 = text2.getGlobalBounds();
+    text2.setPosition(450, 50);
      
     // Load a music to play
-    /*sf::Music music;
+    sf::Music music;
     if (!music.openFromFile(resourcePath() + "nice_music.ogg")) {
         return EXIT_FAILURE;
-    }*/
+    }
 
     // Play the music
-    //music.play();
+    music.play();
     
 
     // Start the game loop
@@ -222,11 +236,10 @@ int main(int, char const**)
         window.draw(bar1);
         window.draw(bar2);
         
-        window.draw(line);
-        //Changed somehthing here!
-
+       
         // Draw the string
-        // window.draw(text);
+        window.draw(text1);
+        window.draw(text2);
 
         // Update the window
         window.display();

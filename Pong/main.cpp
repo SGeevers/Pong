@@ -227,6 +227,11 @@ int main(int, char const**)
                 bar1.move(0,speed);
             }
         }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
+        {
+            Score1=0;
+            Score2=0;
+        }
         
         sf::Event event;
         while (window.pollEvent(event))

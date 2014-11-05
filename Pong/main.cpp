@@ -107,6 +107,7 @@ int main(int, char const**)
             if(ball.getPosition().x<=0)
             {
                 ball_vx*=-1;
+                Score2++;
             }
             if(ball.getPosition().x<=wall_w+bar_w)
             {
@@ -121,6 +122,7 @@ int main(int, char const**)
             if(ball.getPosition().x>=800-2*ball_r)
             {
                 ball_vx*=-1;
+                Score1++;
             }
             if(ball.getPosition().x>=800-wall_w-bar_w-2*ball_r)
             {
@@ -227,6 +229,11 @@ int main(int, char const**)
         window.clear();
 
         // Draw the string
+        std::string textScore1=std::to_string(Score1);
+        std::string textScore2=std::to_string(Score2);
+        text1.setString(textScore1);
+        text2.setString(textScore2);
+        text2.setPosition(500-boxText2.width,50);
         window.draw(text1);
         window.draw(text2);
         

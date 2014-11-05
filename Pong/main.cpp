@@ -25,41 +25,165 @@ int main(int, char const**)
     // Create the main window
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
 
+    
     // Set the Icon
-    sf::Image icon;
+    /*sf::Image icon;
     if (!icon.loadFromFile(resourcePath() + "icon.png")) {
         return EXIT_FAILURE;
     }
-    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());*/
 
     // Load a sprite to display
-    sf::Texture texture;
+    /*sf::Texture texture;
     if (!texture.loadFromFile(resourcePath() + "cute_image.jpg")) {
         return EXIT_FAILURE;
     }
-    sf::Sprite sprite(texture);
+    sf::Sprite sprite(texture);*/
+    double ball_r=20;
+    double ball_vx=-8;
+    double ball_vy=8;
+    sf::CircleShape ball(ball_r);
+    ball.setFillColor(sf::Color(250, 100, 50));
+    ball.setPosition(400-ball_r/2,300-ball_r/2);
+    
+    double wall_w=35;
+    double bar_w=50;
+    double bar_h=100;
+    int speed=5;
+    sf::RectangleShape bar1(sf::Vector2f(bar_w, bar_h));
+    bar1.setFillColor(sf::Color(50, 100, 250));
+    bar1.setPosition(wall_w,300-bar_h/2);
+    sf::RectangleShape bar2(sf::Vector2f(bar_w, bar_h));
+    bar2.setFillColor(sf::Color(50, 100, 250));
+    bar2.setPosition(800-wall_w-bar_w,300-bar_h/2);
 
     // Create a graphical text to display
-    sf::Font font;
+    /*sf::Font font;
     if (!font.loadFromFile(resourcePath() + "sansation.ttf")) {
         return EXIT_FAILURE;
     }
     sf::Text text("Hello SFML", font, 50);
     text.setColor(sf::Color::Black);
-
+    */
+     
     // Load a music to play
-    sf::Music music;
+    /*sf::Music music;
     if (!music.openFromFile(resourcePath() + "nice_music.ogg")) {
         return EXIT_FAILURE;
-    }
+    }*/
 
     // Play the music
-    music.play();
+    //music.play();
+    
 
     // Start the game loop
     while (window.isOpen())
     {
+        ball.move(ball_vx,ball_vy);
+        
         // Process events
+        if(ball_vx<0)
+        {
+            if(ball.getPosition().x<=0)
+            {
+                ball_vx*=-1;
+            }
+            if(ball.getPosition().x<=wall_w+bar_w)
+            {
+                if(ball.getPosition().y<bar1.getPosition().y+bar_h && ball.getPosition().y>bar1.getPosition().y-2*ball_r)
+                {
+                    ball_vx*=-1;
+                }
+            }
+        }
+        if(ball_vx>0)
+        {
+            if(ball.getPosition().x>=800-2*ball_r)
+            {
+                ball_vx*=-1;
+            }
+            if(ball.getPosition().x>=800-wall_w-bar_w-2*ball_r)
+            {
+                if(ball.getPosition().y<bar2.getPosition().y+bar_h && ball.getPosition().y>bar2.getPosition().y-2*ball_r)
+                {
+                    ball_vx*=-1;
+                }
+            }
+        }
+        if(ball_vy<0){
+            if(ball.getPosition().y<=0){
+                ball_vy*=-1;
+            }
+            if(ball.getPosition().y>=bar1.getPosition().y+bar_h-ball_r && ball.getPosition().y<=bar1.getPosition().y+bar_h){
+                if(ball.getPosition().x<=wall_w+bar_w && ball.getPosition().x>=wall_w-2*ball_r){
+                    ball_vy*=-1;
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+                        ball_vy=8;
+                    }
+                }
+            }
+            if(ball.getPosition().y>=bar2.getPosition().y+bar_h-ball_r && ball.getPosition().y<=bar2.getPosition().y+bar_h){
+                if(ball.getPosition().x>=800-wall_w-bar_w-2*ball_r && ball.getPosition().x<=800-wall_w){
+                    ball_vy*=-1;
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+                        ball_vy=8;
+                    }
+                }
+            }
+        }
+        if(ball_vy>0){
+            if(ball.getPosition().y>=600-2*ball_r){
+                ball_vy*=-1;
+            }
+            if(ball.getPosition().y>=bar1.getPosition().y-2*ball_r && ball.getPosition().y<=bar1.getPosition().y-ball_r){
+                if(ball.getPosition().x<=wall_w+bar_w && ball.getPosition().x>=wall_w-2*ball_r){
+                    ball_vy*=-1;
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+                        ball_vy=-8;
+                    }
+                }
+            }
+            if(ball.getPosition().y>=bar2.getPosition().y-2*ball_r && ball.getPosition().y<=bar2.getPosition().y-ball_r){
+                if(ball.getPosition().x>=800-wall_w-bar_w-2*ball_r && ball.getPosition().x<=800-wall_w){
+                    ball_vy*=-1;
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+                        ball_vy=-8;
+                    }
+                }
+            }
+        }
+        
+        
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+        {
+            if(bar2.getPosition().y>0)
+            {
+                bar2.move(0,-speed);
+            }
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+        {
+            if(bar2.getPosition().y<600-bar_h)
+            {
+                bar2.move(0,speed);
+            }
+        }
+        
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+        {
+            if(bar1.getPosition().y>0)
+            {
+                bar1.move(0,-speed);
+            }
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+        {
+            if(bar1.getPosition().y<600-bar_h)
+            {
+                bar1.move(0,speed);
+            }
+        }
+        
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -72,16 +196,23 @@ int main(int, char const**)
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
                 window.close();
             }
+            
+            // Escape pressed : exit
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
+                window.close();
+            }
         }
 
         // Clear screen
         window.clear();
 
         // Draw the sprite
-        window.draw(sprite);
+        window.draw(ball);
+        window.draw(bar1);
+        window.draw(bar2);
 
         // Draw the string
-        window.draw(text);
+        // window.draw(text);
 
         // Update the window
         window.display();

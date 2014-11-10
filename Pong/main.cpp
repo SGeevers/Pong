@@ -41,8 +41,8 @@ int main(int, char const**)
     }
     sf::Sprite sprite(texture);*/
     double ball_r=20;
-    double ball_vx=-6;
-    double ball_vy=6;
+    double ball_vx=-8;
+    double ball_vy=8;
     sf::CircleShape ball(ball_r);
     ball.setFillColor(sf::Color(250, 100, 50));
     ball.setPosition(400-ball_r/2,300-ball_r/2);
@@ -50,7 +50,7 @@ int main(int, char const**)
     double wall_w=35;
     double bar_w=50;
     double bar_h=100;
-    int speed=5;
+    int speed=8;
     sf::RectangleShape bar1(sf::Vector2f(bar_w, bar_h));
     bar1.setFillColor(sf::Color(50, 100, 250));
     bar1.setPosition(wall_w,300-bar_h/2);

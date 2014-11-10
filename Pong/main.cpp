@@ -28,7 +28,7 @@ int main(int, char const**)
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
     window.setVerticalSyncEnabled(true);
 
-    
+    //changed file
     // Set the Icon
     /*sf::Image icon;
     if (!icon.loadFromFile(resourcePath() + "icon.png")) {

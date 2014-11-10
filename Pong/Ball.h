@@ -17,7 +17,7 @@ class Ball
     public:
     
         Ball(double, sf::Color, double, double, double, double);
-        sf::CircleShape getBall();
+        sf::CircleShape getCircle();
         void move();
         bool collisionWall();
         void collisionBar(const Player&);

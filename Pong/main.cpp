@@ -109,21 +109,21 @@ int main(int, char const**)
                 ball_vx*=-1;
                 Score2++;
             }
-            if(ball.getPosition().x<=wall_w+bar_w)
+            if(ball.getPosition().x<=wall_w+bar_w && ball.getPosition().x>=wall_w+bar_w-ball_r)
             {
                 if(ball.getPosition().y<bar1.getPosition().y+bar_h && ball.getPosition().y>bar1.getPosition().y-2*ball_r)
                 {
                     ball_vx*=-1;
-                }
-                if(abs(ball_vy)<10)
-                {
-                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+                    if(abs(ball_vy)<12)
                     {
-                        ball_vy+=1;
-                    }
-                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
-                    {
-                        ball_vy-=1;
+                        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+                        {
+                            ball_vy+=2;
+                        }
+                        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+                        {
+                            ball_vy-=2;
+                        }
                     }
                 }
             }
@@ -135,21 +135,21 @@ int main(int, char const**)
                 ball_vx*=-1;
                 Score1++;
             }
-            if(ball.getPosition().x>=800-wall_w-bar_w-2*ball_r)
+            if(ball.getPosition().x>=800-wall_w-bar_w-2*ball_r && ball.getPosition().x>=wall_w+bar_w-ball_r)
             {
                 if(ball.getPosition().y<bar2.getPosition().y+bar_h && ball.getPosition().y>bar2.getPosition().y-2*ball_r)
                 {
                     ball_vx*=-1;
-                }
-                if(abs(ball_vy)<10)
-                {
-                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
+                    if(abs(ball_vy)<12)
                     {
-                        ball_vy+=1;
-                    }
-                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::K))
-                    {
-                        ball_vy-=1;
+                        if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
+                        {
+                            ball_vy+=2;
+                        }
+                        if (sf::Keyboard::isKeyPressed(sf::Keyboard::K))
+                        {
+                            ball_vy-=2;
+                        }
                     }
                 }
             }
@@ -162,7 +162,7 @@ int main(int, char const**)
                 if(ball.getPosition().x<=wall_w+bar_w && ball.getPosition().x>=wall_w-2*ball_r){
                     ball_vy*=-1;
                     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
-                        ball_vy=8;
+                        ball_vy=9;
                     }
                 }
             }
@@ -170,7 +170,7 @@ int main(int, char const**)
                 if(ball.getPosition().x>=800-wall_w-bar_w-2*ball_r && ball.getPosition().x<=800-wall_w){
                     ball_vy*=-1;
                     if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)){
-                        ball_vy=8;
+                        ball_vy=9;
                     }
                 }
             }
@@ -183,7 +183,7 @@ int main(int, char const**)
                 if(ball.getPosition().x<=wall_w+bar_w && ball.getPosition().x>=wall_w-2*ball_r){
                     ball_vy*=-1;
                     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
-                        ball_vy=-8;
+                        ball_vy=-9;
                     }
                 }
             }
@@ -191,7 +191,7 @@ int main(int, char const**)
                 if(ball.getPosition().x>=800-wall_w-bar_w-2*ball_r && ball.getPosition().x<=800-wall_w){
                     ball_vy*=-1;
                     if (sf::Keyboard::isKeyPressed(sf::Keyboard::K)){
-                        ball_vy=-8;
+                        ball_vy=-9;
                     }
                 }
             }

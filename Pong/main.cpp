@@ -16,6 +16,7 @@
 
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include "Player.h"
 
 // Here is a small helper for you ! Have a look.
 #include "ResourcePath.hpp"
@@ -64,6 +65,9 @@ int main(int, char const**)
     line.setFillColor(sf::Color(250, 250, 250));
     line.setPosition(400,0);
 
+    Player barNew(sf::Vector2f(bar_w, bar_h), sf::Color(50, 100, 250), sf::Keyboard::Up, sf::Keyboard::Down, 400, 400, 10);
+    
+    
     // Create a graphical text to display
     sf::Font font;
     if (!font.loadFromFile(resourcePath() + "sansation.ttf")) {
@@ -232,6 +236,8 @@ int main(int, char const**)
             Score1=0;
             Score2=0;
         }
+        barNew.moveUp();
+        barNew.moveDown();
         
         sf::Event event;
         while (window.pollEvent(event))
@@ -270,7 +276,7 @@ int main(int, char const**)
         window.draw(ball);
         window.draw(bar1);
         window.draw(bar2);
-        
+        window.draw(barNew.getBar());
        
         // Draw the string
         window.draw(text1);

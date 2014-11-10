@@ -47,7 +47,7 @@ int main(int, char const**)
     ball.setFillColor(sf::Color(250, 100, 50));
     ball.setPosition(400-ball_r/2,300-ball_r/2);
     
-    double wall_w=35;
+    double wall_w=10;
     double bar_w=50;
     double bar_h=100;
     int speed=6;

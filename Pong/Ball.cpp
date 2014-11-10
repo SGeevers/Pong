@@ -17,7 +17,7 @@ Ball::Ball(double radius, sf::Color color, double xIn, double yIn, double speedx
     speedy = speedyIn;
 }
 
-sf::CircleShape Ball::getBall()
+sf::CircleShape Ball::getCircle()
 {
     return circle;
     

@@ -282,7 +282,7 @@ int main(int, char const**)
         window.draw(bar1);
         window.draw(bar2);
         window.draw(barNew.getBar());
-        window.draw(ballNew.getBall());
+        window.draw(ballNew.getCircle());
        
         // Draw the string
         window.draw(text1);

@@ -91,13 +91,13 @@ int main(int, char const**)
     
      
     // Load a music to play
-    sf::Music music;
+    /*sf::Music music;
     if (!music.openFromFile(resourcePath() + "nice_music.ogg")) {
         return EXIT_FAILURE;
-    }
+    }*/
 
     // Play the music
-    music.play();
+    //music.play();
     
 
     // Start the game loop

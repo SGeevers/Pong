@@ -17,6 +17,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include "Player.h"
+#include "Ball.h"
 
 // Here is a small helper for you ! Have a look.
 #include "ResourcePath.hpp"
@@ -27,7 +28,7 @@ int main(int, char const**)
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
     window.setVerticalSyncEnabled(true);
 
-    
+    //changed file
     // Set the Icon
     /*sf::Image icon;
     if (!icon.loadFromFile(resourcePath() + "icon.png")) {
@@ -66,6 +67,8 @@ int main(int, char const**)
     line.setPosition(400,0);
 
     Player barNew(sf::Vector2f(bar_w, bar_h), sf::Color(50, 100, 250), sf::Keyboard::Up, sf::Keyboard::Down, 400, 400, 10);
+    
+    Ball ballNew(30, sf::Color(250, 100, 50), 300, 200, 8, 7);
     
     
     // Create a graphical text to display
@@ -238,6 +241,8 @@ int main(int, char const**)
         }
         barNew.moveUp();
         barNew.moveDown();
+        ballNew.collisionWall();
+        ballNew.move();
         
         sf::Event event;
         while (window.pollEvent(event))
@@ -277,6 +282,7 @@ int main(int, char const**)
         window.draw(bar1);
         window.draw(bar2);
         window.draw(barNew.getBar());
+        window.draw(ballNew.getBall());
        
         // Draw the string
         window.draw(text1);

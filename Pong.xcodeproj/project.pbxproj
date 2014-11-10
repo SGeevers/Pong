@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D29FA381A110211006BFC9B /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D29FA361A110211006BFC9B /* Ball.cpp */; };
 		0D8E5AC31A10F3F700A12B9E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E5AC21A10F3F700A12B9E /* Player.cpp */; };
 		6A6E81801A090A3100312646 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A6E817F1A090A3100312646 /* ResourcePath.mm */; };
 		6A6E81831A090A3100312646 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A6E81821A090A3100312646 /* main.cpp */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D29FA361A110211006BFC9B /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
+		0D29FA371A110211006BFC9B /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
 		0D8E5AC11A10ED8A00A12B9E /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		0D8E5AC21A10F3F700A12B9E /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		6A6E817A1A090A3100312646 /* Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pong.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +66,8 @@
 				6A6E817F1A090A3100312646 /* ResourcePath.mm */,
 				6A6E81811A090A3100312646 /* ResourcePath.hpp */,
 				0D8E5AC11A10ED8A00A12B9E /* Player.h */,
+				0D29FA361A110211006BFC9B /* Ball.cpp */,
+				0D29FA371A110211006BFC9B /* Ball.h */,
 				0D8E5AC21A10F3F700A12B9E /* Player.cpp */,
 				6A6E81821A090A3100312646 /* main.cpp */,
 				6A6E81841A090A3100312646 /* Resources */,
@@ -177,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D29FA381A110211006BFC9B /* Ball.cpp in Sources */,
 				6A6E81831A090A3100312646 /* main.cpp in Sources */,
 				6A6E81801A090A3100312646 /* ResourcePath.mm in Sources */,
 				0D8E5AC31A10F3F700A12B9E /* Player.cpp in Sources */,

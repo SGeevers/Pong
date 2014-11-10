@@ -17,6 +17,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include "Player.h"
+#include "Ball.h"
 
 // Here is a small helper for you ! Have a look.
 #include "ResourcePath.hpp"
@@ -67,6 +68,8 @@ int main(int, char const**)
 
     Player barNew(sf::Vector2f(bar_w, bar_h), sf::Color(50, 100, 250), sf::Keyboard::Up, sf::Keyboard::Down, 400, 400, 10);
     
+    Ball ballNew(30, sf::Color(250, 100, 50), 300, 200, 8, 7);
+    
     
     // Create a graphical text to display
     sf::Font font;
@@ -91,13 +94,13 @@ int main(int, char const**)
     
      
     // Load a music to play
-    sf::Music music;
-    if (!music.openFromFile(resourcePath() + "nice_music.ogg")) {
-        return EXIT_FAILURE;
-    }
+   // sf::Music music;
+    //if (!music.openFromFile(resourcePath() + "nice_music.ogg")) {
+     //   return EXIT_FAILURE;
+    //}
 
     // Play the music
-    music.play();
+    //music.play();
     
 
     // Start the game loop
@@ -238,6 +241,8 @@ int main(int, char const**)
         }
         barNew.moveUp();
         barNew.moveDown();
+        ballNew.collisionWall();
+        ballNew.move();
         
         sf::Event event;
         while (window.pollEvent(event))
@@ -277,6 +282,7 @@ int main(int, char const**)
         window.draw(bar1);
         window.draw(bar2);
         window.draw(barNew.getBar());
+        window.draw(ballNew.getBall());
        
         // Draw the string
         window.draw(text1);

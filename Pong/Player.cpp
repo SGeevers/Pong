@@ -18,22 +18,22 @@ Player::Player( sf::Vector2f barSize, sf::Color color, sf::Keyboard::Key keyUpIn
     speed = speedIn;
 }
 
-double Player::getx()
+double Player::getx() const
 {
     return bar.getPosition().x;
 }
 
-double Player::gety()
+double Player::gety() const
 {
     return bar.getPosition().y;
 }
 
-double Player::getHeight()
+double Player::getHeight() const
 {
     return bar.getSize().y;
 }
 
-double Player::getWidth()
+double Player::getWidth() const
 {
     return bar.getSize().x;
 }
@@ -61,17 +61,17 @@ void Player::moveDown()
     }
 }
 
-sf::RectangleShape Player::getBar()
+sf::RectangleShape Player::getBar() const
 {
     return bar;
 }
 
-sf::Keyboard::Key Player::getKeyUp()
+sf::Keyboard::Key Player::getKeyUp() const
 {
     return keyUp;
 }
 
-sf::Keyboard::Key Player::getKeyDown()
+sf::Keyboard::Key Player::getKeyDown() const
 {
     return keyDown;
 }

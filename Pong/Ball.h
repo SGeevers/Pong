@@ -11,6 +11,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include "ResourcePath.hpp"
+#include "Player.h"
 class Player;
 class Ball
 {
@@ -19,7 +20,7 @@ class Ball
         Ball(double, sf::Color, double, double, double, double);
         sf::CircleShape getCircle();
         void move();
-        bool collisionWall();
+        void collisionWall();
         void collisionBar(const Player&);
         double getRadius();
     

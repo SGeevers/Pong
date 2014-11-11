@@ -42,18 +42,19 @@ int main(int, char const**)
         return EXIT_FAILURE;
     }
     sf::Sprite sprite(texture);*/
-    double ball_r=20;
-    double ball_vx=-9;
-    double ball_vy=8;
-    sf::CircleShape ball(ball_r);
-    ball.setFillColor(sf::Color(250, 100, 50));
-    ball.setPosition(400-ball_r/2,300-ball_r/2);
+    //double ball_r=20;
+    //double ball_vx=-9;
+    //double ball_vy=8;
+    //sf::CircleShape ball(ball_r);
+    //ball.setFillColor(sf::Color(250, 100, 50));
+    //ball.setPosition(400-ball_r/2,300-ball_r/2);
     
     double wall_w=10;
     double bar_w=50;
     double bar_h=100;
     int speed=8;
-    sf::RectangleShape bar1(sf::Vector2f(bar_w, bar_h));
+    /*
+     sf::RectangleShape bar1(sf::Vector2f(bar_w, bar_h));
     bar1.setFillColor(sf::Color(50, 100, 250));
     bar1.setPosition(wall_w,300-bar_h/2);
     sf::RectangleShape bar2(sf::Vector2f(bar_w, bar_h));
@@ -65,7 +66,7 @@ int main(int, char const**)
     sf::RectangleShape line(sf::Vector2f(line_w,line_h));
     line.setFillColor(sf::Color(250, 250, 250));
     line.setPosition(400,0);
-
+*/
     Player barNew(sf::Vector2f(bar_w, bar_h), sf::Color(50, 100, 250), sf::Keyboard::Up, sf::Keyboard::Down, 400, 400, 10);
     
     Ball ballNew(30, sf::Color(250, 100, 50), 300, 200, 8, 7);
@@ -106,7 +107,8 @@ int main(int, char const**)
     // Start the game loop
     while (window.isOpen())
     {
-        ball.move(ball_vx,ball_vy);
+        /*
+         ball.move(ball_vx,ball_vy);
         
         // Process events
         if(ball_vx<0)
@@ -127,7 +129,7 @@ int main(int, char const**)
                         {
                             ball_vy+=2;
                         }
-                        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+                        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
                         {
                             ball_vy-=2;
                         }
@@ -231,9 +233,10 @@ int main(int, char const**)
         {
             if(bar1.getPosition().y<600-bar_h)
             {
-                bar1.move(0,speed);
+                bar1.move(0,speed);k
             }
         }
+         */
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
         {
             Score1=0;
@@ -243,7 +246,7 @@ int main(int, char const**)
         barNew.moveDown();
         ballNew.collisionWall();
         ballNew.move();
-        
+        ballNew.collisionBar(barNew);
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -276,11 +279,11 @@ int main(int, char const**)
         window.draw(text2);
         
         // Draw the sprite
-        line.setPosition(400, 0);
-        window.draw(line);
-        window.draw(ball);
-        window.draw(bar1);
-        window.draw(bar2);
+        //line.setPosition(400, 0);
+        //window.draw(line);
+        //window.draw(ball);
+        //window.draw(bar1);
+        //window.draw(bar2);
         window.draw(barNew.getBar());
         window.draw(ballNew.getCircle());
        

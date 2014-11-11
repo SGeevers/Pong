@@ -16,15 +16,15 @@ class Player
 {
     public:
     Player(sf::Vector2f, sf::Color, sf::Keyboard::Key , sf::Keyboard::Key, double, double, double);
-    double getx();
-    double gety();
-    double getHeight();
-    double getWidth();
+    double getx() const;
+    double gety() const;
+    double getHeight() const;
+    double getWidth() const;
     void moveUp();
     void moveDown();
-    sf::RectangleShape getBar();
-    sf::Keyboard::Key getKeyUp();
-    sf::Keyboard::Key getKeyDown();
+    sf::RectangleShape getBar() const;
+    sf::Keyboard::Key getKeyUp() const;
+    sf::Keyboard::Key getKeyDown() const;
     
     
     private:

@@ -32,6 +32,7 @@
 		6A6E81871A090A3100312646 /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
 		6A6E81891A090A3100312646 /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
 		6A6E818B1A090A3100312646 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		6AC4ADF21A1365990092D93D /* wallType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wallType.h; sourceTree = "<group>"; };
 		6AC62C271A1225B10092599F /* Score.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Score.cpp; sourceTree = "<group>"; };
 		6AC62C281A1225B10092599F /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				6A6E817F1A090A3100312646 /* ResourcePath.mm */,
+				6AC4ADF21A1365990092D93D /* wallType.h */,
 				6AC62C271A1225B10092599F /* Score.cpp */,
 				6AC62C281A1225B10092599F /* Score.h */,
 				6A6E81811A090A3100312646 /* ResourcePath.hpp */,

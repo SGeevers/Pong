@@ -22,6 +22,7 @@
 #include "Player.h"
 #include "Ball.h"
 #include "Score.h"
+#include "wallType.h"
 
 // Here is a small helper for you ! Have a look.
 #include "ResourcePath.hpp"
@@ -118,12 +119,12 @@ int main(int, char const**)
         player2.moveDown();
         switch(ball.collisionWall())
         {
-            case 0:
+            case wallType::noWall:
                 break;
-            case 1:
+            case wallType::leftWall:
                 scoreLeft.addScore();
                 break;
-            case 2:
+            case wallType::rightWall:
                 scoreRight.addScore();
                 break;
         }

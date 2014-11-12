@@ -16,7 +16,7 @@
 
 //#define windowWidth 800;
 //#define windowHeight 600;
-enum class wallType {noWall, leftWall, rightWall};
+//enum class wallType {noWall, leftWall, rightWall};
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include "Player.h"

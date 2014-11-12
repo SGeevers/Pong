@@ -12,7 +12,9 @@
 #include <SFML/Graphics.hpp>
 #include "ResourcePath.hpp"
 #include "Player.h"
+
 class Player;
+
 class Ball
 {
     public:
@@ -20,7 +22,7 @@ class Ball
         Ball(double, sf::Color, double, double, double, double);
         sf::CircleShape getCircle();
         void move();
-        void collisionWall();
+        int collisionWall();
         void collisionBar(const Player&);
         double getRadius();
     

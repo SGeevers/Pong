@@ -33,14 +33,14 @@ void Ball::move()
     circle.move(speedx, speedy);
     
 }
-void Ball::collisionWall()
+int Ball::collisionWall()
 {
     if(speedx<0)
     {
         if(circle.getPosition().x<=0)
         {
             speedx*=-1;
-            
+            return 1;
         }
     }
     
@@ -49,6 +49,7 @@ void Ball::collisionWall()
         if(circle.getPosition().x>=800 - 2 * getRadius())
         {
             speedx*=-1;
+            return 2;
         }
     }
     
@@ -67,7 +68,7 @@ void Ball::collisionWall()
             speedy*=-1;
         }
     }
-   
+    return 0;
 }
 
 void Ball::collisionBar(const Player& player)

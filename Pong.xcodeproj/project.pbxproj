@@ -15,6 +15,7 @@
 		6A6E81881A090A3100312646 /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 6A6E81871A090A3100312646 /* nice_music.ogg */; };
 		6A6E818A1A090A3100312646 /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A6E81891A090A3100312646 /* sansation.ttf */; };
 		6A6E818C1A090A3100312646 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6E818B1A090A3100312646 /* icon.png */; };
+		6AC62C291A1225B10092599F /* Score.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AC62C271A1225B10092599F /* Score.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		6A6E81871A090A3100312646 /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
 		6A6E81891A090A3100312646 /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
 		6A6E818B1A090A3100312646 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		6AC62C271A1225B10092599F /* Score.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Score.cpp; sourceTree = "<group>"; };
+		6AC62C281A1225B10092599F /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +67,13 @@
 			isa = PBXGroup;
 			children = (
 				6A6E817F1A090A3100312646 /* ResourcePath.mm */,
+				6AC62C271A1225B10092599F /* Score.cpp */,
+				6AC62C281A1225B10092599F /* Score.h */,
 				6A6E81811A090A3100312646 /* ResourcePath.hpp */,
+				0D8E5AC21A10F3F700A12B9E /* Player.cpp */,
 				0D8E5AC11A10ED8A00A12B9E /* Player.h */,
 				0D29FA361A110211006BFC9B /* Ball.cpp */,
 				0D29FA371A110211006BFC9B /* Ball.h */,
-				0D8E5AC21A10F3F700A12B9E /* Player.cpp */,
 				6A6E81821A090A3100312646 /* main.cpp */,
 				6A6E81841A090A3100312646 /* Resources */,
 				6A6E817D1A090A3100312646 /* Supporting Files */,
@@ -185,6 +190,7 @@
 				0D29FA381A110211006BFC9B /* Ball.cpp in Sources */,
 				6A6E81831A090A3100312646 /* main.cpp in Sources */,
 				6A6E81801A090A3100312646 /* ResourcePath.mm in Sources */,
+				6AC62C291A1225B10092599F /* Score.cpp in Sources */,
 				0D8E5AC31A10F3F700A12B9E /* Player.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
